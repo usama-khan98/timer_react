@@ -5,7 +5,9 @@ class Timer extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            countTime: this.props.startCount 
+            countTime: this.props.startCount,
+            color:'red',
+            fontSize:'3rem'
         };
     }
 
@@ -30,7 +32,7 @@ class Timer extends React.Component {
         } else {
             // the time won't be displayed so clear it
             clearInterval(this.timerID);
-            return <h2>Time up!!</h2>;
+            return <h2 style={{color: this.state.color,fontSize: this.state.fontSize}}>Time up!!</h2>;
         }
     }
 }
